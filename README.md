@@ -1,13 +1,16 @@
 # Injector
 
-[![tests](https://github.com/kubo/injector/actions/workflows/test.yml/badge.svg)](https://github.com/kubo/injector/actions/workflows/test.yml)
 [![Static Badge](https://img.shields.io/badge/docs-API_reference-blue)](http://www.jiubao.org/injector/injector_8h.html)
 
 **Library for injecting a shared library into a Linux, Windows and MacOS process**
 
+> [!CAUTION]  
+> Due to a shift in my personal interests, this repository is no longer maintained and has been archived.
+> If you're looking for a successor project, please check [the network graph](https://github.com/kubo/injector/network) to see if any forks have continued development.
+
 ## Linux
 
-> **Warning**  
+> [!WARNING]  
 > Don't use this in production environments. It may stop target processes forever. See [Caveats](#caveats).
 
 I was inspired by [`linux-inject`][] and the basic idea came from it.

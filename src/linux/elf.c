@@ -46,7 +46,7 @@
 #define Elf_Sym Elf32_Sym
 #endif
 
-// #define INJECTOR_DEBUG_ELF_C 1
+#define INJECTOR_DEBUG_ELF_C 1
 
 #ifdef INJECTOR_DEBUG_ELF_C
 #undef DEBUG
@@ -435,19 +435,19 @@ static FILE *fopen_with_ino(const char *path, dev_t dev, ino_t ino)
               (unsigned long long)ino, (unsigned long long)sbuf.st_ino);
         goto cleanup;
     }
-    if (sbuf.st_dev != dev) {
-        int rv = is_on_overlay_fs(fileno(fp));
-        if (rv < 0) {
-            goto cleanup;
-        }
-        if (rv != 1) {
-            DEBUG(" unexpected device number: expected %llu but %llu\n",
-                  (unsigned long long)dev, (unsigned long long)sbuf.st_dev);
-            goto cleanup;
-        }
-        DEBUG(" ignore device number mismatch (expected %llu but %llu) on overlay file system  ... ",
-              (unsigned long long)dev, (unsigned long long)sbuf.st_dev);
-    }
+    // if (sbuf.st_dev != dev) {
+    //     int rv = is_on_overlay_fs(fileno(fp));
+    //     if (rv < 0) {
+    //         goto cleanup;
+    //     }
+    //     if (rv != 1) {
+    //         DEBUG(" unexpected device number: expected %llu but %llu\n",
+    //               (unsigned long long)dev, (unsigned long long)sbuf.st_dev);
+    //         goto cleanup;
+    //     }
+    //     DEBUG(" ignore device number mismatch (expected %llu but %llu) on overlay file system  ... ",
+    //           (unsigned long long)dev, (unsigned long long)sbuf.st_dev);
+    // }
 
     DEBUG(" OK\n");
     return fp;

@@ -46,7 +46,7 @@
 #define Elf_Sym Elf32_Sym
 #endif
 
-#define INJECTOR_DEBUG_ELF_C 1
+// #define INJECTOR_DEBUG_ELF_C 1
 
 #ifdef INJECTOR_DEBUG_ELF_C
 #undef DEBUG
